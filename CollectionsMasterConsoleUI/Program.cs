@@ -18,14 +18,14 @@ namespace CollectionsMasterConsoleUI
             var numbers = new int[50];
 
             //DONE: Create a method to populate the number array with 50 random numbers that are between 0 and 50
-
+            
             Populater(numbers);
 
             //DONE: Print the first number of the array
-            Console.WriteLine($"{numbers[0]}");
+            Console.WriteLine($"First number of array: {numbers[0]}");
 
             //DONE: Print the last number of the array            
-            Console.WriteLine($"{numbers[numbers.Length - 1]}");
+            Console.WriteLine($"Last number of array:{numbers[numbers.Length - 1]}");
 
             Console.WriteLine("All Numbers Original");
             //UNCOMMENT this method to print out your numbers from arrays or lists
@@ -47,18 +47,20 @@ namespace CollectionsMasterConsoleUI
 
 
 
-            Console.WriteLine("-------------------");
+            Console.WriteLine("------------------------------------");
 
-            //TODO: Create a method that will set numbers that are a multiple of 3 to zero then print to the console all numbers
+            //DONE: Create a method that will set numbers that are a multiple of 3 to zero then print to the console all numbers
             Console.WriteLine("Multiple of three = 0: ");
 
             ThreeKiller(numbers);
 
-            Console.WriteLine("-------------------");
+            Console.WriteLine("-----------------------------------------");
+
+            
 
             //TODO: Sort the array in order now
             /*      Hint: Array.____()      */
-            Console.WriteLine("Sorted numbers:");
+            Console.WriteLine("-----------Sorted numbers:----------------");
 
             Array.Sort(numbers);
             NumberPrinter(numbers);
@@ -76,20 +78,20 @@ namespace CollectionsMasterConsoleUI
 
             //DONE: Print the capacity of the list to the console
 
-            Console.WriteLine($"{numList.Capacity}");
+            Console.WriteLine($"Capacity of the list: {numList.Capacity}");
 
             //DONE: Populate the List with 50 random numbers between 0 and 50 you will need a method for this            
             Populater(numList);
 
 
-            //TODO: Print the new capacity
+            //DONE: Print the new capacity
             Console.WriteLine($"New Capacity: {numList.Capacity}");
 
             Console.WriteLine("---------------------");
 
             //TODO: Create a method that prints if a user number is present in the list
             //Remember: What if the user types "abc" accident your app should handle that!
-            Console.WriteLine("What number will you search for in the number list?");
+            
             
             int userNumber;
             bool isANumber;
@@ -135,13 +137,14 @@ namespace CollectionsMasterConsoleUI
         {
             for (int i = 0; i < numbers.Length; i++)
             {
-                if (numbers[i] == 0)
+                if (numbers[i] % 3 == 0)
                 {
                     numbers [i] = 0;
 
                 }
-                NumberPrinter(numbers);
+                
             }
+            NumberPrinter(numbers);
         }
 
         private static void OddKiller(List<int> numberList)
