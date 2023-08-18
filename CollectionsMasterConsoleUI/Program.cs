@@ -149,11 +149,11 @@ namespace CollectionsMasterConsoleUI
 
         private static void OddKiller(List<int> numberList)
         {
-            for (int i = numberList.Count - 1; i >= 0; i++)
+             for (int i = 0; i < numberList.Count; i++)
 
-                if (numberList[i] % 2 != 0)
+                if (numberList[i] %2 == 0)
                 {
-                    numberList.RemoveAt(i);
+                numberList.Remove(numberList[i]);
                 }
                 
             //var evens = numberList.Where (x => x % 2 != 0)
