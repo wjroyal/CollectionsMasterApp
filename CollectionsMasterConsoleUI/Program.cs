@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace CollectionsMasterConsoleUI
@@ -139,26 +140,26 @@ namespace CollectionsMasterConsoleUI
             {
                 if (numbers[i] % 3 == 0)
                 {
-                    numbers [i] = 0;
+                    numbers[i] = 0;
 
                 }
                 
             }
-            NumberPrinter(numbers);
+        
         }
 
-        private static void OddKiller(List<int> numberList)
+        private static void OddKiller(List <int> numList)
         {
-             for (int i = 0; i < numberList.Count; i++)
-
-                if (numberList[i] %2 == 0)
+            for (int i = 0; i < numList.Count; i++)
+            {
+                if (numList[i] % 2 != 0)
                 {
-                numberList.Remove(numberList[i]);
+                    numList[i] = 0; 
                 }
-                
-            //var evens = numberList.Where (x => x % 2 != 0)
+                NumberPrinter(numList);
+            }
 
-            NumberPrinter(numberList);
+        
         }
 
         private static void NumberChecker(List<int> numberList, int searchNumber)
